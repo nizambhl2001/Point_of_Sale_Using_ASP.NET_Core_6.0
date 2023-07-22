@@ -52,13 +52,12 @@ Point of Sale (POS) with N-Tier Architecture This Project was developed in C# an
 
 ## Solution Explorer & Layer Architecture
 ### Domian Layer
-![domain](https://github.com/nizambhl2001/Dot-NET-Point-of-Sale-POS-Csharp/assets/112401451/6dad7546-8b2a-43ab-9177-8e81c086f708)
-
+![DomainLayer](https://github.com/nizambhl2001/Dot-NET-Point-of-Sale-POS-C-Sharp/assets/112401451/793a7756-c9a3-410f-bcc1-d52b2ae2b7a1)
 ### Business Layer
 
-![business](https://github.com/nizambhl2001/Dot-NET-Point-of-Sale-POS-Csharp/assets/112401451/cf048a6b-36f0-4069-8769-4096b6dea498)
+![BusinessLayer](https://github.com/nizambhl2001/Dot-NET-Point-of-Sale-POS-C-Sharp/assets/112401451/7aeca56c-6ec9-4d00-9ae4-96f354ccb882)
 
 ### Presentation Layer
 
-![presention](https://github.com/nizambhl2001/Dot-NET-Point-of-Sale-POS-Csharp/assets/112401451/9e1d70cc-509a-4e89-8417-2dc24ac98b0f)
+![PresentationLayer](https://github.com/nizambhl2001/Dot-NET-Point-of-Sale-POS-C-Sharp/assets/112401451/79a3a137-69ee-4f21-bae2-3c3605d64b8c)
 
