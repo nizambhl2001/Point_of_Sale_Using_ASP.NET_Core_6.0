@@ -1,0 +1,59 @@
+﻿@model WebApplication2.Models.Product
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+<div class="row md-4" style="width:100%">
+    <div class="col-md-12">
+        <div class="card card-gray p-1">
+            <div class="card-header">
+                <h2 class="card-title">Enter Your Product Information</h2>
+            </div>
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label asp-for="ProductName" class="control-label"></label>
+                            <input asp-for="ProductName" class="form-control" />
+                            <span asp-validation-for="ProductName" class="text-danger"></span>
+                        </div>
+                       @* <div class="col-md-4">
+                             <label asp-for="ProductTypeId" class="control-label"></label>
+                               <select asp-for="ProductTypeId" class ="form-control" asp-items="ViewBag.ProductTypeId"></select>
+                        </div>*@
+                        <div class="form-group">
+                         <label asp-for="ProductTypeId">Product Type</label>
+                            <select asp-for="ProductTypeId" asp-items='@new SelectList(ViewBag.ProductTypes, "ProductTypeId", "ProductTypeName")' class="form-control">
+                             <option value="">-- Select Product Type --</option>
+                            </select>
+        
+                         <span asp-validation-for="ProductTypeId" class="text-danger"></span>
+                         </div>
+                        <div class="col-md-4">
+                            <label asp-for="BuyingPrice" class="control-label"></label>
+                            <input asp-for="BuyingPrice" class="form-control" />
+                            <span asp-validation-for="BuyingPrice" class="text-danger"></span>
+                        </div>  
+                        <div class="col-md-4">
+                            <label asp-for="SellingPrice" class="control-label"></label>
+                            <input asp-for="SellingPrice" class="form-control" />
+                            <span asp-validation-for="SellingPrice" class="text-danger"></span>
+                        </div>    
+                        
+                    </div>
+                </div>
+                <br>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

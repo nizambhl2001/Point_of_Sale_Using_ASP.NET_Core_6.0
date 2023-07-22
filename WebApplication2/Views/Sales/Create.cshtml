@@ -1,0 +1,129 @@
+﻿@model WebApplication2.Models.Sale
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+
+<div class="row md-4" style="width:100%">
+    <div class="col-md-12">
+        <div class="card card-gray p-1">
+            <div class="card-header">
+                <h2 class="card-title">Sales Details</h2>
+            </div>
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label asp-for="ProductId" class="control-label">Product Name</label>
+                            <select asp-for="ProductId" class="form-control" asp-items='@new SelectList(ViewBag.Products,"ProductId","ProductName")'>
+                                <option value="">--Select Product Name</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                           <label asp-for="CustomerId" class="control-label">Customer Name</label>
+                            <select asp-for="CustomerId" class="form-control" asp-items='@new SelectList(ViewBag.Customers,"CustomerId","CustomerName")'></select>
+                        </div>
+                        <div class="col-md-4">
+                            <label asp-for="StoreId" class="control-label">Store Name</label>
+                            <select asp-for="StoreId" class="form-control" asp-items='@new SelectList(ViewBag.Stores,"StoreId","StoreName")'></select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label asp-for="SaleDate" class="control-label"></label>
+                            <input asp-for="SaleDate" class="form-control" />
+                            <span asp-validation-for="SaleDate" class="text-danger"></span>
+                        </div>
+                        <div class="col-md-3">
+                            <label asp-for="Rate" class="control-label"></label>
+                            <input asp-for="Rate" class="form-control" id="price" onchange="getTotal()" />
+                            <span asp-validation-for="Rate" class="text-danger"></span>
+                        </div>
+                        <div class="col-md-3">
+                            <label asp-for="Quantity" class="control-label"></label>
+                            <input asp-for="Quantity" class="form-control" id="qty" onchange="getTotal()" />
+                            <span asp-validation-for="Quantity" class="text-danger"></span>
+                        </div>
+                        <div class="col-md-3">
+                            <label asp-for="TotalPrice" class="control-label"></label>
+                            <input asp-for="TotalPrice" class="form-control" id="total" />
+                            <span asp-validation-for="TotalPrice" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label asp-for="Vat" class="control-label"></label>
+                            <input asp-for="Vat" class="form-control" id="vat" onchange="getTotal()" />
+                            <span asp-validation-for="Vat" class="text-danger"></span>
+                        </div>
+                        <div class="col-md-3">
+                            <label asp-for="Discount" class="control-label"></label>
+                            <input asp-for="Discount" class="form-control" id="discount" onchange="getTotal()" />
+                            <span asp-validation-for="Discount" class="text-danger"></span>
+                        </div>
+                        <div class="col-md-3">
+                            <label asp-for="NetTotalPrice" class="control-label"></label>
+                            <input asp-for="NetTotalPrice" class="form-control" id="grandTotal" />
+                            <span asp-validation-for="NetTotalPrice" class="text-danger"></span>
+                        </div>
+                        <div class="col-md-3">
+                            <label asp-for="StockStatus" class="control-label"></label>
+                            <input asp-for="StockStatus" class="form-control" />
+                            <span asp-validation-for="StockStatus" class="text-danger"></span>
+                        </div>
+                        <div class="col-md-3">
+                            <label asp-for="MemoNo" class="control-label"></label>
+                            <input asp-for="MemoNo" class="form-control" />
+                            <span asp-validation-for="MemoNo" class="text-danger"></span>
+                        </div> 
+                        <div class="col-md-3">
+                            <label asp-for="Coomments" class="control-label"></label>
+                            <input asp-for="Coomments" class="form-control" />
+                            <span asp-validation-for="Coomments" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+<script>
+    function getTotal() {
+        var price = document.getElementById("price").value;
+        var qty = document.getElementById("qty").value;
+        var total = price * qty;
+        document.getElementById("total").value = total;
+
+        var vat = document.getElementById("vat").value;
+        var nVat = (vat / 100) + 1;
+        var grandTotal = total * nVat;
+        document.getElementById("grandTotal").value = grandTotal;
+
+        var discount = document.getElementById("discount").value;
+        var nDis = (discount / 100);
+        var grand = total - (total * nDis);
+        document.getElementById("grandTotal").value = grand
+    }
+</script>
