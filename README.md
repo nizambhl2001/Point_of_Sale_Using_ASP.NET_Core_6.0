@@ -50,14 +50,16 @@ Point of Sale (POS) with N-Tier Architecture This Project was developed in C# an
 <br><a href="https://www.microsoft.com/en-us/sql-server/sql-server-downloads" rel="nofollow">Microsoft SQL Server 2019 <em>Express (64-bit)</em></a>
 <br><a href="https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver15" rel="nofollow">SQL Server Management Studio (SSMS) 18.9.2</a></p>
 
-## Solution Explorer & Layer Architecture
-### Domian Layer
-![DomainLayer](https://github.com/nizambhl2001/Dot-NET-Point-of-Sale-POS-C-Sharp/assets/112401451/793a7756-c9a3-410f-bcc1-d52b2ae2b7a1)
-### Business Layer
+## Customer list Page View
+![customer](https://github.com/nizambhl2001/MVC-Ajax_ProductManagementSystem/assets/112401451/c4a191e7-b801-4566-9b4c-a9eceb922e6e)
 
-![BusinessLayer](https://github.com/nizambhl2001/Dot-NET-Point-of-Sale-POS-C-Sharp/assets/112401451/7aeca56c-6ec9-4d00-9ae4-96f354ccb882)
+## Create Products Page View
+![productcr](https://github.com/nizambhl2001/MVC-Ajax_ProductManagementSystem/assets/112401451/eae10700-02e2-40d6-8e36-d7d6881d24ce)
 
-### Presentation Layer
+## Products list Page View
+![productview](https://github.com/nizambhl2001/MVC-Ajax_ProductManagementSystem/assets/112401451/3959ac5c-309b-459c-af14-fb307050408e)
 
-![PresentationLayer](https://github.com/nizambhl2001/Dot-NET-Point-of-Sale-POS-C-Sharp/assets/112401451/79a3a137-69ee-4f21-bae2-3c3605d64b8c)
+
+
+
 
